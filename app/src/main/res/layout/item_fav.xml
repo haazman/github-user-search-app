@@ -42,11 +42,13 @@
 
             <TextView
                 android:id="@+id/textUsername"
+
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
                 android:layout_marginStart="30dp"
                 android:gravity="center_vertical"
                 android:text="@string/defaultLoading"
+                android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toRightOf="@id/imageProfile"
@@ -60,22 +62,13 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:text="@string/defaultLoading"
+                android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintLeft_toRightOf="@id/imageProfile"
                 app:layout_constraintTop_toBottomOf="@id/textUsername" />
-
-            <TextView
-                android:id="@+id/textScore"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"
-                android:gravity="center_vertical"
-                android:text="@string/defaultLoading"
-                android:textSize="12sp"
-                app:layout_constraintLeft_toRightOf="@id/imageProfile"
-                app:layout_constraintTop_toBottomOf="@id/textId" />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
     </com.google.android.material.card.MaterialCardView>
 
 

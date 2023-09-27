@@ -1,20 +1,21 @@
-package com.haidar.githubusersearch.model
+package com.haidar.githubusersearch.viewmodel
 
+import android.app.Application
 import android.content.ContentValues
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.haidar.githubusersearch.data.database.FavouriteUser
 import com.haidar.githubusersearch.data.response.DetailResponse
-import com.haidar.githubusersearch.data.response.ItemsItem
 import com.haidar.githubusersearch.data.response.ResponseFollow
-import com.haidar.githubusersearch.data.response.ResponseGithub
 import com.haidar.githubusersearch.data.retrofit.ApiConfig
+import com.haidar.githubusersearch.repository.FavouriteUserRepository
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DetailViewModel: ViewModel() {
+class DetailViewModel(application: Application) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -26,6 +27,19 @@ class DetailViewModel: ViewModel() {
 
     private var _following = MutableLiveData<List<ResponseFollow>?>()
     val following: LiveData<List<ResponseFollow>?> = _following
+
+    private val mFavUserRepository: FavouriteUserRepository = FavouriteUserRepository(application)
+
+    fun insert(favUser: FavouriteUser) {
+        mFavUserRepository.insert(favUser)
+    }
+
+    fun delete(favUser: FavouriteUser) {
+        mFavUserRepository.delete(favUser)
+    }
+
+    fun getFavouriteUserByUsername(favUsername: String):LiveData<FavouriteUser> = mFavUserRepository.getFavouriteUserByUsername(favUsername)
+
 
     fun findGithubDetail(username: String) {
         _isLoading.value = true
@@ -45,6 +59,7 @@ class DetailViewModel: ViewModel() {
                     Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
                 }
             }
+
             override fun onFailure(call: Call<DetailResponse>, t: Throwable) {
                 Log.e(ContentValues.TAG, "onFailure: ${t.message}")
             }
@@ -69,6 +84,7 @@ class DetailViewModel: ViewModel() {
                     Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
                 }
             }
+
             override fun onFailure(call: Call<List<ResponseFollow>>, t: Throwable) {
                 Log.e(ContentValues.TAG, "onFailure: ${t.message}")
             }
@@ -93,6 +109,7 @@ class DetailViewModel: ViewModel() {
                     Log.e(ContentValues.TAG, "onFailure: ${response.message()}")
                 }
             }
+
             override fun onFailure(call: Call<List<ResponseFollow>>, t: Throwable) {
                 Log.e(ContentValues.TAG, "onFailure: ${t.message}")
             }

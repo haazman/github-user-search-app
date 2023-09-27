@@ -1,162 +1,188 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.DetailActivity"
-    android:fillViewport="true"
-    android:id="@+id/scrollView"
-    >
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:textColor="@color/white"
-            android:id="@+id/textUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:textStyle="bold"
-            android:text="@string/defaultUsername"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            android:textSize="24sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"/>
-        <ImageView
-            android:id="@+id/shareBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintTop_toTopOf="@id/textUsername"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/baseline_share_24"
-            />
-        <ImageView
-            android:id="@+id/webBtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintTop_toTopOf="@id/textUsername"
-            app:layout_constraintEnd_toStartOf="@id/shareBtn"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/baseline_web_24"
-            />
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageProfile"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            app:layout_constraintTop_toBottomOf="@id/textUsername"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-            />
-        <TextView
-        android:textStyle="bold"
-        android:id="@+id/textUsername2"
-        android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        app:layout_constraintTop_toBottomOf="@id/imageProfile"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
-        android:textSize="24sp"
-        android:textColor="@color/purple"
-        android:text="@string/defaultUsername"/>
-        <TextView
-            android:id="@+id/textName"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            app:layout_constraintTop_toBottomOf="@id/textUsername2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="10dp"
-            android:textSize="24sp"
-            android:textColor="@color/card_background_1"
-            android:text="@string/defaultUsername"/>
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/wrapper"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/textName"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="20dp"
-            >
-            <TextView
-                android:id="@+id/textCountFollowers"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="26sp"
-                app:layout_constraintStart_toStartOf="@id/textFollowers"
-                app:layout_constraintEnd_toEndOf="@id/textFollowers"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="1"
-                android:textColor="@color/card_background_2"/>
-            <TextView
-                android:id="@+id/textFollowers"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textCountFollowers"
-                android:text="Followers"
-                android:textColor="@color/card_background_2"/>
-            <TextView
-                android:id="@+id/textCountRepos"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="26sp"
-                app:layout_constraintStart_toStartOf="@id/textRepo"
-                app:layout_constraintEnd_toEndOf="@id/textRepo"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="1"
-                android:textColor="@color/card_background_1"/>
-            <TextView
-                android:id="@+id/textRepo"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@id/textFollowers"
-                android:layout_marginStart="20dp"
-                app:layout_constraintTop_toBottomOf="@id/textCountFollowers"
-                android:text="Repositories"
-                android:textColor="@color/card_background_1"/>
-            <TextView
-                android:id="@+id/textCountFollowing"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="26sp"
-                app:layout_constraintStart_toStartOf="@id/textFollowing"
-                app:layout_constraintEnd_toEndOf="@id/textFollowing"
-                app:layout_constraintTop_toTopOf="parent"
-                android:text="1"
-                android:textColor="@color/card_background_3"/>
-            <TextView
-                android:id="@+id/textFollowing"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:textSize="18sp"
-                app:layout_constraintStart_toEndOf="@id/textRepo"
-                android:layout_marginStart="20dp"
-                app:layout_constraintTop_toBottomOf="@id/textCountFollowers"
-                android:text="Following"
-                android:textColor="@color/card_background_3"/>
+    android:layout_height="match_parent">
 
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        tools:context=".ui.activities.DetailActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/defaultLoading"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/shareBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/baseline_share_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textUsername" />
+
+            <ImageView
+                android:id="@+id/webBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/baseline_link_24"
+                app:layout_constraintEnd_toStartOf="@id/shareBtn"
+                app:layout_constraintTop_toTopOf="@id/textUsername" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textUsername"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+            <TextView
+                android:id="@+id/textUsername2"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/defaultLoading"
+                android:textColor="@color/purple"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageProfile" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/defaultLoading"
+                android:textColor="@color/card_background_1"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textUsername2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/wrapper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textName">
+
+                <TextView
+                    android:id="@+id/textCountFollowers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="1"
+                    android:textColor="@color/card_background_2"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toEndOf="@id/textFollowers"
+                    app:layout_constraintStart_toStartOf="@id/textFollowers"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textFollowers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="@string/followers"
+                    android:textColor="@color/card_background_2"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textCountFollowers" />
+
+                <TextView
+                    android:id="@+id/textCountRepos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="1"
+                    android:textColor="@color/card_background_1"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toEndOf="@id/textRepo"
+                    app:layout_constraintStart_toStartOf="@id/textRepo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textRepo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/repositories"
+                    android:textColor="@color/card_background_1"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/textFollowers"
+                    app:layout_constraintTop_toBottomOf="@id/textCountFollowers" />
+
+                <TextView
+                    android:id="@+id/textCountFollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="1"
+                    android:textColor="@color/card_background_3"
+                    android:textSize="26sp"
+                    app:layout_constraintEnd_toEndOf="@id/textFollowing"
+                    app:layout_constraintStart_toStartOf="@id/textFollowing"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textFollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:text="@string/following"
+                    android:textColor="@color/card_background_3"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/textRepo"
+                    app:layout_constraintTop_toBottomOf="@id/textCountFollowers" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toBottomOf="@id/wrapper"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tabs" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            app:layout_constraintTop_toBottomOf="@id/wrapper"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            app:tabTextColor="@android:color/white"/>
-        <androidx.viewpager2.widget.ViewPager2
-            app:layout_constraintTop_toBottomOf="@id/tabs"
-            android:id="@+id/view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/favouriteBtn"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="20dp"
+        android:contentDescription="@string/favourite"
+        android:padding="16dp"
+        app:maxImageSize="40dp"
+        app:srcCompat="@drawable/ic_love_outline" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

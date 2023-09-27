@@ -8,4 +8,6 @@
     <color name="card_background_2">#ff565d</color>
     <color name="card_background_3">#3dd598</color>
     <color name="purple">#b482f4</color>
+    <color name="button_background">#eee8f4</color>
+    <color name= "iconColor">#FF000000</color>
 </resources>

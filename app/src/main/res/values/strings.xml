@@ -2,9 +2,16 @@
     <string name="app_name">Github Search</string>
     <string name="searchbar_hint">Masukkan kunci\n</string>
     <string name="menuCog">Setting\n</string>
-    <string name="defaultUsername">username\n\n</string>
+    <string name="defaultLoading">Loading..\n\n</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_text_1">Followers</string>
     <string name="tab_text_2">Following</string>
+    <string name="favourite">Favourite</string>
+    <string name="following">Following</string>
+    <string name="repositories">Repositories</string>
+    <string name="followers">Followers</string>
+    <string name="setting">Setting</string>
+    <string name="delete">Delete?</string>
+    <string name="favourite_user">Favourite User</string>
 </resources>
